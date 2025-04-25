@@ -25,8 +25,8 @@ This repository contains OpenSCAD files for illustrating the **disk method** and
 ## Files Included
 
 - `DiskAndWashers.scad` — Main customizable OpenSCAD model with disk, washer, and full solid modes.
-- `SampleSolid.stl` — STL file of a full solid of revolution (smooth continuous surface).
-- `SampleWashers.stl` — STL file showing the discrete washer approximation (Riemann-style stacking).
+- `solid.stl` — STL file of a full solid of revolution (smooth continuous surface).
+- `washers.stl` — STL file showing the discrete washer approximation (Riemann-style stacking).
 
 ## License
 
