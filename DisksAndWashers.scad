@@ -10,11 +10,11 @@ printedheight = 30; // desired printed height in mm
 scalefactor = printedheight / (b - a);
 
 // Outer Function x = f(z)
-function f(z) = sqrt(z) + 0.5;
+function f(z) = sqrt(z) + 1;
 
 // Inner Function x = g(z)
 // Set g(z) = 0 to automatically switch to disk method
-function g(z) = z + 0.4;
+function g(z) = 1-z;
 
 // Disk resolution for smoothness
 $fn = 200;
