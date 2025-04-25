@@ -2,7 +2,7 @@
 
 # Calculus 3D Models: Disk and Washer Methods
 
-This repository contains OpenSCAD file for illustrating the **disk method** and **washer method** for calculating volumes of revolution, commonly taught in calculus courses.
+This repository contains OpenSCAD files for illustrating the **disk method** and **washer method** for calculating volumes of revolution, commonly taught in calculus courses.
 
 ## Mathematical Description
 
@@ -15,15 +15,18 @@ This repository contains OpenSCAD file for illustrating the **disk method** and 
 
 - Open the `.scad` file in [OpenSCAD](https://openscad.org/).
 - Customize parameters:
-  - Number of subintervals `n`
-  - Sampling method: `"left"`, `"mid"`, or `"right"`
-  - `show_solid`: Toggle between showing stacked disks/washers or the full solid of revolution.
-  - `printedheight`: Set the final height of the printed object in millimeters.
+  - `n`: Number of subintervals
+  - `sample_type`: `"left"`, `"mid"`, or `"right"` sampling for the approximation
+  - `show_solid`: Toggle between discrete stacked disks/washers or a full continuous solid
+  - `printedheight`: Set the final height of the printed object in millimeters
+- Render the model.
 - Export the model to STL for 3D printing, or use for visualization.
 
 ## Files Included
 
-- `DiskAndWashers.scad` — Main model with options for disks, washers, and full solid of revolution.
+- `DiskAndWashers.scad` — Main customizable OpenSCAD model with disk, washer, and full solid modes.
+- `SampleSolid.stl` — STL file of a full solid of revolution (smooth continuous surface).
+- `SampleWashers.stl` — STL file showing the discrete washer approximation (Riemann-style stacking).
 
 ## License
 
