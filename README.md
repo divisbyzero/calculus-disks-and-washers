@@ -1,3 +1,5 @@
+[![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/yourusername/yourrepo)
+
 # Calculus 3D Models: Disk and Washer Methods
 
 This repository contains OpenSCAD file for illustrating the **disk method** and **washer method** for calculating volumes of revolution, commonly taught in calculus courses.
