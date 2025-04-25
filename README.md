@@ -1,4 +1,4 @@
-[![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/yourusername/yourrepo)
+[![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/divisbyzero/calculus-disks-and-washers/)
 
 # Calculus 3D Models: Disk and Washer Methods
 
