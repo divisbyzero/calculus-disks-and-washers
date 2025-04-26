@@ -1,25 +1,39 @@
+// -------------------------
 // Parameters
-n = 10; // number of subintervals
-a = 0; // starting z
-b = 0.75; // ending z
-sample_type = "mid"; // "left", "mid", or "right"
-show_solid = false; // set to true to show full solid surface of revolution
-printedheight = 30; // desired printed height in mm
+// -------------------------
 
-// Scaling factor
+n = 10;            // Number of subintervals
+a = 0;             // Starting z-coordinate
+b = 0.75;          // Ending z-coordinate
+sample_type = "mid"; // Sampling method: "left", "mid", or "right"
+show_solid = false;  // true = render full solid surface; false = stacked disks/washers
+printedheight = 30;  // Desired printed height in millimeters
+
+// Scaling factor to match printed height
 scalefactor = printedheight / (b - a);
 
-// Outer Function x = f(z)
+// -------------------------
+// Functions defining the solid
+// -------------------------
+
+// Outer function: defines outer radius as a function of z
 function f(z) = sqrt(z) + 1;
 
-// Inner Function x = g(z)
-// Set g(z) = 0 to automatically switch to disk method
-function g(z) = 1-z;
+// Inner function: defines inner radius as a function of z
+// Set g(z) = 0 to automatically switch to disk method (no hole)
+function g(z) = 1 - z;
 
-// Disk resolution for smoothness
-$fn = 200;
+// -------------------------
+// Model resolution
+// -------------------------
 
-// Washer Module (aligned along z-axis)
+$fn = 200; // Number of facets to approximate circles
+
+// -------------------------
+// Modules
+// -------------------------
+
+// Washer Module: creates a washer at a given z position
 module washer(z_bottom, r_outer, r_inner, thickness) {
     translate([0, 0, z_bottom * scalefactor])
         difference() {
@@ -29,7 +43,7 @@ module washer(z_bottom, r_outer, r_inner, thickness) {
         }
 }
 
-// Solid of Revolution Module (full continuous surface)
+// Solid Surface Module: creates a full continuous solid of revolution
 module solid_surface() {
     rotate_extrude() {
         polygon(points = [
@@ -41,13 +55,16 @@ module solid_surface() {
     }
 }
 
-// Sample Point Selection
+// Sample point selection based on sampling method
 function sample_z(i, interval, a) =
     (sample_type == "left") ? (a + i * interval) :
     (sample_type == "right") ? (a + (i + 1) * interval) :
-    (a + (i + 0.5) * interval); // default to midpoint
+    (a + (i + 0.5) * interval); // Default to midpoint
 
-// Main
+// -------------------------
+// Main Logic
+// -------------------------
+
 interval = (b - a) / n;
 
 if (show_solid) {
@@ -59,10 +76,12 @@ if (show_solid) {
         r_outer = f(z_sample);
         r_inner = g(z_sample);
 
-        // Automatically switch to disk if g(z) = 0
+        // If g(z) = 0, use a solid disk
         if (r_inner == 0) {
             washer(z_bottom = z_start, r_outer = r_outer, r_inner = 0, thickness = interval);
-        } else if (r_outer > r_inner) {
+        } 
+        // Otherwise, create a washer
+        else if (r_outer > r_inner) {
             washer(z_bottom = z_start, r_outer = r_outer, r_inner = r_inner, thickness = interval);
         }
     }
