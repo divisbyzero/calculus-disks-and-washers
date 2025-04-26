@@ -1,11 +1,18 @@
 // -------------------------
+// Details
+// -------------------------
+
+// In this model, we have a region in the xy-planed defined by an outer function x = f(y), an inner function x = g(y), and lines y = a ≥ 0 and y = b > a. The region is revolved around the y-axis to produce a solid.
+// The disk/washer model devides the interval [a,b] into n equal subintervals. The chosen sample point determines the outer and inner extents of the rectangle for the subinterval. The rectangle is revolved about the y-axis to obtain a disk or washer. All the disks/washers together give an approximate volume.
+
+// -------------------------
 // Parameters
 // -------------------------
 
 n = 10;            // Number of subintervals
-a = 0;             // Starting z-coordinate
-b = 0.75;          // Ending z-coordinate
-sample_type = "mid"; // Sampling method: "left", "mid", or "right"
+a = 0;             // Bottom y-coordinate
+b = 0.75;          // Top y-coordinate
+sample_type = "mid"; // Sampling method: "bottom", "mid", or "top"
 show_solid = false;  // true = render full solid surface; false = stacked disks/washers
 printedheight = 30;  // Desired printed height in millimeters
 
@@ -16,12 +23,12 @@ scalefactor = printedheight / (b - a);
 // Functions defining the solid
 // -------------------------
 
-// Outer function: defines outer radius as a function of z
-function f(z) = sqrt(z) + 1;
+// Outer function: defines the outer curve in the region as a function of y
+function f(y) = sqrt(3/4-y) + 1;
 
-// Inner function: defines inner radius as a function of z
-// Set g(z) = 0 to automatically switch to disk method (no hole)
-function g(z) = 1 - z;
+// Inner function: defines the inner curve in the region as a function of y
+// Set g(y) = 0 to automatically switch to disk method (no hole)
+function g(y) = 1/4 + y;
 
 // -------------------------
 // Model resolution
@@ -57,8 +64,8 @@ module solid_surface() {
 
 // Sample point selection based on sampling method
 function sample_z(i, interval, a) =
-    (sample_type == "left") ? (a + i * interval) :
-    (sample_type == "right") ? (a + (i + 1) * interval) :
+    (sample_type == "bottom") ? (a + i * interval) :
+    (sample_type == "top") ? (a + (i + 1) * interval) :
     (a + (i + 0.5) * interval); // Default to midpoint
 
 // -------------------------
