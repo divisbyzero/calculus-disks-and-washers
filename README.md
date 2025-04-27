@@ -14,6 +14,23 @@ This repository contains an OpenSCAD file for illustrating the **disk method** a
   - `y = b` defines the top of the region.
 - If you set `g(y) = 0`, the model automatically switches to the **disk method** (solid without holes).
 
+
+<p align="center">
+  <img src="Disk.jpeg" alt="Disk model" width="400">
+  <img src="DiskSolid.jpeg" alt="The solid for the disk model" width="400">
+</p>
+<p align="center">
+  <img src="Washer.jpeg" alt="Washer model" width="400">
+  <img src="WasherSolid.jpeg" alt="The solid for the washer model" width="400">
+</p>
+
+## Interactive Previews
+
+- [Disks model](Disks.stl) (preview STL file)
+- [Solid for the disks model](DisksSolid.stl) (preview STL file)
+- [Washers model](Washers.stl) (preview STL file)
+- [Solid for the washers model](WashersSolid.stl) (preview STL file)
+
 ## How to Use
 
 - Open the `.scad` file in [OpenSCAD](https://openscad.org/).
