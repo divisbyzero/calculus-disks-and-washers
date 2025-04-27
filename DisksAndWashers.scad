@@ -1,6 +1,8 @@
-// -------------------------
-// Details
-// -------------------------
+//===================================================
+// Calculus 3D Models: The Disk and Washer Methods
+// Author: https://github.com/divisbyzero
+// Description: OpenSCAD file for illustrating the disk and washer method for calculating volumes of revolution, commonly taught in calculus courses.
+//===================================================
 
 // In this model, we have a region in the xy-planed defined by an outer function x = f(y), an inner function x = g(y), and lines y = a ≥ 0 and y = b > a. The region is revolved around the y-axis to produce a solid.
 // The disk/washer model devides the interval [a,b] into n equal subintervals. The chosen sample point determines the outer and inner extents of the rectangle for the subinterval. The rectangle is revolved about the y-axis to obtain a disk or washer. All the disks/washers together give an approximate volume.
