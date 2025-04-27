@@ -33,4 +33,6 @@ This repository contains an OpenSCAD file for illustrating the **disk method** a
 
 ## License
 
-Feel free to use, modify, and share for educational purposes!
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).  
+Feel free to use, modify, and share for educational or personal use, with attribution. Commercial use is not permitted.
+
