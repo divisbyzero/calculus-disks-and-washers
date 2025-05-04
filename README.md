@@ -1,5 +1,10 @@
 # Calculus 3D Models: Disk and Washer Methods
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC--BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Made with OpenSCAD](https://img.shields.io/badge/Made%20with-OpenSCAD-yellow.svg)](https://openscad.org/)
+[![3D Printable](https://img.shields.io/badge/3D-Printable-blue.svg)]()
+[![Last Commit](https://img.shields.io/github/last-commit/divisbyzero/calculus-disks-and-washers)](https://github.com/divisbyzero/calculus-disks-and-washers/commits/main)
+
 This repository contains an OpenSCAD file for illustrating the **disk method** and **washer method** for calculating volumes of revolution, commonly taught in calculus courses.
 
 ## Mathematical Description
